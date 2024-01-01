@@ -1,0 +1,67 @@
+#root {
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding-inline-start: 10px;
+  transition: border-color 0.25s;
+}
+
+input:focus {
+  border: 1px solid #646cff;
+}
+
+.appPage {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+.PagesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin: 20px;
+  height: 380px;
+  width: 500px;
+  border: 1px solid snow;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.PagesContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.PagesContainer {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.link {
+  width: 100%;
+  font-size: 22px;
+}
