@@ -1,6 +1,10 @@
-# React Clips (by Ashutosh Nagrale) in React + Vite 🔥🔥🔥
+# React Clips ( -> ) React + Vite 🔥🔥🔥
 
-This Repo consist of Small React Projects (Interview Coding Questions) made for quick look through of code and how to implement in React.
+#### Project by Ashutosh Nagrale 😁
+
+This Repo consist of Small React Projects and Interview Coding Questions made for quick look through of code and how to implement in React.
+
+#### ||| Note: my implementation is not the only solution to achieve the results.There are other implementations also.
 
 Done:
 
@@ -22,10 +26,18 @@ TODO:
 10. TypeWriter Effect
 11. Parallax Effect
 
-## To Run
+## Will Add more project as time passes 🚀🚀🚀
 
-# First
+# Happy Learning 💖
+
+![Alt text](image-1.png)
+
+# To Run
+
+### First install dependencies
+
+`npm install`
+
+### to run the project
 
 `npm start`
-
-## Will Add more project as time passes.
