@@ -9,9 +9,7 @@ const SearchBar = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const res = await axios.get(
-        "https://jsonplaceholder.typicode.com/users?limit=20"
-      );
+      const res = await axios.get("https://jsonplaceholder.typicode.com/users");
       const data = await res.data;
       setUsers(data);
     };

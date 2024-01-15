@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import FileDownload from "./pages/fileDownload/FileDownload";
 import SearchBar from "./pages/searchBar/SearchBar";
+import Loader from "./pages/loader/Loader";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,6 +29,11 @@ function App() {
                     Search Page
                   </Link>
                 </li>
+                <li>
+                  <Link className="link" to="/loader">
+                    Loader
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -42,6 +48,7 @@ function App() {
           <Route index element={<AppPage />} />
           <Route path="fileDownload" element={<FileDownload />} />
           <Route path="searchPage" element={<SearchBar />} />
+          <Route path="loader" element={<Loader />} />
         </Route>
       </Routes>
     </BrowserRouter>
