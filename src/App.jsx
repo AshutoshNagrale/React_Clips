@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import FileDownload from "./pages/fileDownload/FileDownload";
 import SearchBar from "./pages/searchBar/SearchBar";
 import Loader from "./pages/loader/Loader";
+import Typewriter from "./pages/typewriter/Typewriter";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,7 +25,7 @@ function App() {
       done: true,
     },
     {
-      linkTopic: "Calculator",
+      linkTopic: "Calculator with Redux",
       to: "",
       done: false,
     },
@@ -49,7 +50,22 @@ function App() {
       done: false,
     },
     {
-      link: "Google Login",
+      linkTopic: "Google Login",
+      to: "",
+      done: false,
+    },
+    {
+      linkTopic: "Redux / Redux Toolkit",
+      to: "",
+      done: false,
+    },
+    {
+      linkTopic: "TypeWriter Effect",
+      to: "typewriter",
+      done: true,
+    },
+    {
+      linkTopic: "Parallax Effect",
       to: "",
       done: false,
     },
@@ -94,6 +110,7 @@ function App() {
           <Route path="fileDownload" element={<FileDownload />} />
           <Route path="searchPage" element={<SearchBar />} />
           <Route path="loader" element={<Loader />} />
+          <Route path="typewriter" element={<Typewriter />} />
         </Route>
       </Routes>
     </BrowserRouter>

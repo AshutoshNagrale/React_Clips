@@ -1,0 +1,21 @@
+.typeContainer {
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(215, 228, 255);
+  color: rgb(234, 170, 52);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.typeContainer p {
+  font-size: 42px;
+  margin: 0;
+  padding: 0;
+}
+
+.typeContainer h1 {
+  font-size: 50px;
+  font-weight: 600;
+}
