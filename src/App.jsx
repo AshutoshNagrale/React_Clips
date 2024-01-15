@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import FileDownload from "./pages/fileDownload/FileDownload";
@@ -17,21 +17,50 @@ function App() {
             <button onClick={() => setCount((count) => count + 1)}>
               count is {count}
             </button>
+            <div className="todoList">
+              <div></div>
+              <p>TODO LIST</p>
+            </div>
             <div className="PagesContainer">
               <ul>
                 <li>
                   <Link className="link" to="/fileDownload">
-                    File Download Page
+                    <div>File Download Page</div>
                   </Link>
                 </li>
                 <li>
                   <Link className="link" to="/searchPage">
-                    Search Page
+                    <div>Search Page</div>
                   </Link>
                 </li>
                 <li>
                   <Link className="link" to="/loader">
-                    Loader
+                    <div>Loader</div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="link" to="/">
+                    <div className="todo">Calculator </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="link" to="/">
+                    <div className="todo">S3 get and post iamges </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="link" to="/">
+                    <div className="todo">MongoDB Integration</div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="link" to="/">
+                    <div className="todo">MYSQL Integration</div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="link" to="/">
+                    <div className="todo">Redis Integration</div>
                   </Link>
                 </li>
               </ul>

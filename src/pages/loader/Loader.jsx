@@ -1,15 +1,23 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./loader.css";
 import gallery from "./data.js";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../navbar/Navbar.jsx";
 
 const Loader = () => {
   useEffect(() => {
-    window.addEventListener("load", () => {
+    const addClasses = () => {
       const loaderContainer = document.querySelector(".loader-container");
       const pageContent = document.querySelector("#page-content");
       loaderContainer.classList.add("hidden");
       pageContent.classList.add("visible");
-    });
+    };
+
+    window.addEventListener("load", addClasses);
+
+    return () => {
+      window.removeEventListener("load", addClasses);
+    };
   }, []);
 
   return (
@@ -39,6 +47,7 @@ const Loader = () => {
       </div>
       <section id="page-content">
         <header>
+          <Navbar />
           <p className="small">Take a trip</p>
           <h2>Destinations Unveiled: Inspiring Journeys Await</h2>
           <p>

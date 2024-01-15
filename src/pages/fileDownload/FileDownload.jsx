@@ -3,6 +3,7 @@ import "./fileDownload.css";
 import React, { useState } from "react";
 // import { getImagesUrlfromS3 } from "../S3Client";
 import Navbar from "../navbar/Navbar";
+import { Link } from "react-router-dom";
 
 const FileDownload = () => {
   const [loading, setLoading] = useState(false);
@@ -53,6 +54,18 @@ const FileDownload = () => {
         {loading ? "Downloading...." : "Download File"}
       </button>
       {error && "Error Getting Image. Check the image address"}
+
+      <div className="linkComponent">
+        <p>Provide Full Url of Image</p>
+        <p>Example : https://www.demo-image.jpg</p>
+        <p >Before using visit this site below, to  get temporarily access to the demo</p>
+        <p>
+          <a href="https://cors-anywhere.herokuapp.com/" target="blank"><u>
+            https://cors-anywhere.herokuapp.com/
+            </u>
+            </a>
+        </p>
+      </div>
     </div>
   );
 };

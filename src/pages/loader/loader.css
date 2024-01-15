@@ -10,8 +10,8 @@ html {
   line-height: 1.5;
 }
 
-body {
-  background-color: #f1efec;
+#page-content {
+  background-color: white;
   padding: 5rem 7.5rem;
   color: #151618;
 }

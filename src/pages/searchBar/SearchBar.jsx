@@ -1,7 +1,7 @@
 import axios from "axios";
 import Navbar from "../navbar/Navbar";
 import "./searchbar.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const SearchBar = () => {
   const [users, setUsers] = useState(null);
@@ -44,6 +44,7 @@ const SearchBar = () => {
           id="search"
           className="search"
           onChange={handleSearch}
+          placeholder="Type text"
         />
       </div>
       <div className="userCards">

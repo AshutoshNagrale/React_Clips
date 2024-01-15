@@ -1,8 +1,17 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This Repo consist of Small React Projects (Interview Coding Questions) made for quick look through of code and how to implement in React.
 
-Currently, two official plugins are available:
+Done:
+1. Locally Download Image using image URL
+2. SearchBar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+TODO:
+1. Calculator
+2. TODO App
+
+
+
+## Will Add more project as time passes.
+
+
