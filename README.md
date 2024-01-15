@@ -1,13 +1,15 @@
-# React + Vite
+# React Clips (by Ashutosh Nagrale) in React + Vite 🔥🔥🔥
 
 This Repo consist of Small React Projects (Interview Coding Questions) made for quick look through of code and how to implement in React.
 
 Done:
+
 1. Locally Download Image using image URL
 2. SearchBar
 3. Pre Loader
 
 TODO:
+
 1. Calculator
 2. TODO App
 3. Calculator with Redux
@@ -19,5 +21,11 @@ TODO:
 9. Redux / Redux Toolkit
 10. TypeWriter Effect
 11. Parallax Effect
+
+## To Run
+
+# First
+
+`npm start`
 
 ## Will Add more project as time passes.
