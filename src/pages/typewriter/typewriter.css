@@ -2,20 +2,41 @@
   height: 100vh;
   width: 100%;
   background-color: rgb(215, 228, 255);
-  color: rgb(234, 170, 52);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
 }
 
 .typeContainer p {
   font-size: 42px;
   margin: 0;
   padding: 0;
+  color: rgb(217, 91, 255);
+  font-weight: 600;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .typeContainer h1 {
   font-size: 50px;
-  font-weight: 600;
+  color: rgb(0, 0, 0);
+}
+
+.typeContainer span {
+  color: rgb(234, 170, 52);
+}
+
+#cursor {
+  /* animation: cursor-blink 1.2s infinite steps(1) ease-in-out; */
+}
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
 }
