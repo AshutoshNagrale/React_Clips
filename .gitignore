@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+*.env
+*vite.config.js
+*.eslintrc.cjs
+.gitignore
+
 # testing
 /coverage
 
