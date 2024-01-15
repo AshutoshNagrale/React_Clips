@@ -7,6 +7,53 @@ import Loader from "./pages/loader/Loader";
 
 function App() {
   const [count, setCount] = useState(0);
+  const linksData = [
+    {
+      linkTopic: "File Download Page",
+      to: "fileDownload",
+      done: true,
+    },
+    {
+      linkTopic: "Search Page",
+      to: "searchPage",
+      done: true,
+    },
+    {
+      linkTopic: "Loader",
+      to: "loader",
+      done: true,
+    },
+    {
+      linkTopic: "Calculator",
+      to: "",
+      done: false,
+    },
+    {
+      linkTopic: "S3 get and post Iamges",
+      to: "",
+      done: false,
+    },
+    {
+      linkTopic: "MongoDB Integration",
+      to: "",
+      done: false,
+    },
+    {
+      linkTopic: "MYSQL Integration",
+      to: "",
+      done: false,
+    },
+    {
+      linkTopic: "Redis Integration",
+      to: "",
+      done: false,
+    },
+    {
+      link: "Google Login",
+      to: "",
+      done: false,
+    },
+  ];
 
   const AppPage = () => {
     return (
@@ -23,46 +70,15 @@ function App() {
             </div>
             <div className="PagesContainer">
               <ul>
-                <li>
-                  <Link className="link" to="/fileDownload">
-                    <div>File Download Page</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/searchPage">
-                    <div>Search Page</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/loader">
-                    <div>Loader</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/">
-                    <div className="todo">Calculator </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/">
-                    <div className="todo">S3 get and post iamges </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/">
-                    <div className="todo">MongoDB Integration</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/">
-                    <div className="todo">MYSQL Integration</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="link" to="/">
-                    <div className="todo">Redis Integration</div>
-                  </Link>
-                </li>
+                {linksData.map((item, index) => (
+                  <li>
+                    <Link className="link" to={`/${item.to}`}>
+                      <div className={item.done ? "" : "todo"}>
+                        {item.linkTopic}
+                      </div>
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
