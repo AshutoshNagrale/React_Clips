@@ -46,11 +46,59 @@
 
 /*------------- Magnetic Button -------------*/
 
+:root {
+  --gray-100: #262626;
+  --accent: #d11f3e;
+}
+
 .magneto {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
   border: none;
-  background-color: gray;
+  background-color: var(--gray-100);
   color: white;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s cubic-bezier(0, -0.28, 1, 0.58);
+}
+
+.magneto:hover {
+  background-color: #2c57f0;
+  color: whitesmoke;
+}
+.magneto:hover .magneto-text {
+  color: whitesmoke;
+}
+
+.magneto .debug {
+  display: none;
+}
+
+.magneto:hover + .debug {
+  display: block;
+}
+
+.magneto:focus,
+.magneto:focus-visible {
+  outline: none;
+}
+.magneto-text {
+  font-size: 20px;
+}
+
+.debug {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--gray-100);
+  opacity: 0.4;
+  color: white;
+  padding: 1.5rem;
+  width: 15rem;
+  height: 120px;
 }

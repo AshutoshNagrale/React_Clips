@@ -4,6 +4,28 @@
   --loader-bg: #191819;
   --def-transition-duration: 0.3s;
 }
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+
 html {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;

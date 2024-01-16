@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "./loader.css";
 import gallery from "./data.js";
-import { useNavigate } from "react-router-dom";
-import Navbar from "../navbar/Navbar.jsx";
+  import Navbar from "../navbar/Navbar.jsx";
+import Lenis from "@studio-freight/lenis";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
 
 const Loader = () => {
   useEffect(() => {
@@ -14,6 +16,15 @@ const Loader = () => {
     };
 
     window.addEventListener("load", addClasses);
+
+    // LENIS Smooth scrolling
+    const lenis = new Lenis();
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+    gsap.ticker.lagSmoothing(0);
+    // LENIS Ends
 
     return () => {
       window.removeEventListener("load", addClasses);

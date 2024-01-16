@@ -20,7 +20,7 @@ function App() {
       done: true,
     },
     {
-      linkTopic: "Loader",
+      linkTopic: "Loader + Lenis Scrolling",
       to: "loader",
       done: true,
     },
@@ -60,7 +60,7 @@ function App() {
       done: false,
     },
     {
-      linkTopic: "TypeWriter Effect & Magnnetic Button",
+      linkTopic: "TypeWriter Effect & Magnetic Button",
       to: "typewriter",
       done: true,
     },
