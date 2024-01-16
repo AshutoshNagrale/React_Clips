@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import FileDownload from "./pages/fileDownload/FileDownload";
 import SearchBar from "./pages/searchBar/SearchBar";
 import Loader from "./pages/loader/Loader";
 import Typewriter from "./pages/typewriter/Typewriter";
+import Parallax from "./pages/parallax/Parallax";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -66,8 +67,8 @@ function App() {
     },
     {
       linkTopic: "Parallax Effect",
-      to: "",
-      done: false,
+      to: "parallax",
+      done: true,
     },
   ];
 
@@ -87,7 +88,7 @@ function App() {
             <div className="PagesContainer">
               <ul>
                 {linksData.map((item, index) => (
-                  <li>
+                  <li key={index}>
                     <Link className="link" to={`/${item.to}`}>
                       <div className={item.done ? "" : "todo"}>
                         {item.linkTopic}
@@ -111,6 +112,7 @@ function App() {
           <Route path="searchPage" element={<SearchBar />} />
           <Route path="loader" element={<Loader />} />
           <Route path="typewriter" element={<Typewriter />} />
+          <Route path="parallax" element={<Parallax />} />
         </Route>
       </Routes>
     </BrowserRouter>

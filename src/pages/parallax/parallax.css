@@ -1,0 +1,215 @@
+:root {
+  --primary: #0b0036;
+  --primary-tint-10: #23194a;
+  --primary-tint-20: #3c335e;
+  --primary-shade-20: #09002b;
+  --secondary: #f2b279;
+  --white: #fff;
+  --white-80: rgba(255, 255, 255, 0.8);
+  --white-16: rgba(255, 255, 255, 0.16);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+.parallax {
+  background-color: #531331;
+}
+h1,
+h2 {
+  font-family: "Cormorant Unicase", serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4rem;
+  margin: 0 0 3rem;
+  color: var(--secondary);
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 2rem;
+}
+
+#hero {
+  /* background: url("./src/assets/parallax/got.svg") top center no-repeat; */
+  background-size: cover;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem 4rem;
+}
+
+#main-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  z-index: 99;
+}
+
+#main-header nav {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+#main-header nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+#main-header nav a {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+#menu-button svg rect {
+  transition: all 0.2s ease-in-out;
+}
+
+#menu-button svg path {
+  transition: all 0.2s ease-in-out;
+}
+
+#menu-button:hover svg rect {
+  fill: var(--secondary);
+  fill-opacity: 1;
+}
+
+#menu-button:hover svg path {
+  fill: var(--primary);
+}
+
+#stories {
+  padding: 8rem;
+}
+
+#stories header {
+  text-align: center;
+  max-width: 64%;
+  margin: 0 auto 8rem;
+}
+
+p.lead {
+  font-style: normal;
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--white-80);
+  margin: 0;
+}
+
+.divider {
+  height: 1px;
+  width: 10rem;
+  background-color: var(--white-16);
+  margin: 0 auto 3rem;
+}
+
+.story-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.story {
+  padding: 8rem 4rem;
+  border-radius: 0.25rem;
+  background-color: var(--primary-tint-10);
+  box-shadow: 16px 16px 0px 0px var(--primary-shade-20);
+}
+
+.story p {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  color: var(--white-80);
+}
+
+.story a {
+  padding: 1rem 2rem;
+  border-radius: 6.25rem;
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
+  transition: all 0.2s ease-in-out;
+}
+
+.story a:hover {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+/* Lenis recommended CSS */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+#hero {
+  position: relative;
+}
+
+#sunset-wrapper {
+  width: 100%;
+  height: 100dvh;
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+div[id*="sunset-bg-"] {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+  width: 100%;
+  height: 100dvh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#sunset-bg-1 {
+  background-image: url("./src/assets/parallax/Group-1.svg");
+}
+#sunset-bg-2 {
+  background-image: url("./src/assets/parallax/Group-2.svg");
+}
+#sunset-bg-3 {
+  background-image: url("./src/assets/parallax/Group-3.svg");
+}
+#sunset-bg-4 {
+  background-image: url("./src/assets/parallax/Group-5.svg");
+}

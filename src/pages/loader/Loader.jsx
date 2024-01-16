@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./loader.css";
 import gallery from "./data.js";
-  import Navbar from "../navbar/Navbar.jsx";
+import Navbar from "../navbar/Navbar.jsx";
 import Lenis from "@studio-freight/lenis";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
@@ -25,10 +25,6 @@ const Loader = () => {
     });
     gsap.ticker.lagSmoothing(0);
     // LENIS Ends
-
-    return () => {
-      window.removeEventListener("load", addClasses);
-    };
   }, []);
 
   return (

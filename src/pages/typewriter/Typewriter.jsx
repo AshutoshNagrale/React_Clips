@@ -61,7 +61,7 @@ const Typewriter = () => {
       });
 
     // Magnetic Button
-    
+
     // const magneto = document.querySelector(".magneto");
     // const magnetoText = document.querySelector(".magneto-text");
     // const debug = document.querySelector(".debug");
