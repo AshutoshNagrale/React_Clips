@@ -31,6 +31,7 @@ const Parallax = () => {
         trigger: sunset,
         start: "top top",
         scrub: true,
+        markers: true,
       },
     });
     parallax.forEach((bg) => {
