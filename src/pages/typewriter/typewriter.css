@@ -17,19 +17,22 @@
   font-weight: 600;
   font-family: "Courier New", Courier, monospace;
 }
-
+#typewriter {
+  padding-left: 10px;
+}
 .typeContainer h1 {
   font-size: 50px;
   color: rgb(0, 0, 0);
 }
 
 .typeContainer span {
-  color: rgb(234, 170, 52);
+  color: #daa25a;
 }
 
 #cursor {
   /* animation: cursor-blink 1.2s infinite steps(1) ease-in-out; */
 }
+
 @keyframes cursor-blink {
   0%,
   100% {
@@ -39,4 +42,15 @@
   50% {
     opacity: 1;
   }
+}
+
+/*------------- Magnetic Button -------------*/
+
+.magneto {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: none;
+  background-color: gray;
+  color: white;
 }

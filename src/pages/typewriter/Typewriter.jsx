@@ -2,12 +2,14 @@ import React, { useEffect } from "react";
 import "./typewriter.css";
 import { gsap } from "gsap";
 import { TextPlugin } from "gsap/TextPlugin";
+import Navbar from "../navbar/Navbar";
+
+gsap.registerPlugin(TextPlugin);
 
 const Typewriter = () => {
   const words = ["Boldness", "Clarity", "Originality", "Precision"];
 
   useEffect(() => {
-    gsap.registerPlugin(TextPlugin);
     // Main Timeline
     let mainTimeline = gsap.timeline({
       repeat: -1,
@@ -58,12 +60,19 @@ const Typewriter = () => {
 
   return (
     <div className="typeContainer">
+      <Navbar />
       <p>Typewriter Effect</p>
       <h1>
-        Shaping Visions into Reality with
+        <>Creating and Crafting Projects with</>
         <span id="typewriter"></span>
         <span id="cursor">|</span>
       </h1>
+
+      <button className="magneto">
+        <span className="magneto-text">Ashu</span>
+      </button>
+
+      <div className="debugger"></div>
     </div>
   );
 };
