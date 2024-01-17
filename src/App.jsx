@@ -61,7 +61,7 @@ function App() {
       done: false,
     },
     {
-      linkTopic: "Typewriter Effect + Magnetic Button",
+      linkTopic: "Typewriter + Magnetic Button",
       to: "typewriter",
       done: true,
     },

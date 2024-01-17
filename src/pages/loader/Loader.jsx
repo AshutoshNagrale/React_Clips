@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./loader.css";
 import gallery from "./data.js";
 import Navbar from "../navbar/Navbar.jsx";
@@ -7,14 +7,12 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
 
 const Loader = () => {
-  let loading = 1;
   useEffect(() => {
     const addClasses = () => {
       const loaderContainer = document.querySelector(".loader-container");
       const pageContent = document.querySelector("#page-content");
       loaderContainer.classList.add("hidden");
       pageContent.classList.add("visible");
-      loading += 1;
     };
 
     window.addEventListener("load", addClasses);
