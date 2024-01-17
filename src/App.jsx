@@ -6,6 +6,7 @@ import SearchBar from "./pages/searchBar/SearchBar";
 import Loader from "./pages/loader/Loader";
 import Typewriter from "./pages/typewriter/Typewriter";
 import Parallax from "./pages/parallax/Parallax";
+import S3 from "./pages/s3/S3";
 Navigate;
 function App() {
   const [count, setCount] = useState(0);
@@ -32,7 +33,7 @@ function App() {
     },
     {
       linkTopic: "S3 get and post Iamges",
-      to: "",
+      to: "s3",
       done: false,
     },
     {
@@ -89,7 +90,7 @@ function App() {
             </div>
             <div className="PagesContainer">
               {linksData.map((item, index) => (
-                <Link key={index} to={item.to}>
+                <Link key={index} to={item.done ? item.t : ""}>
                   <div className={item.done ? "box" : "todo"}>
                     <p>{item.linkTopic}</p>
                   </div>
@@ -111,6 +112,7 @@ function App() {
           <Route path="loader" element={<Loader />} />
           <Route path="typewriter" element={<Typewriter />} />
           <Route path="parallax" element={<Parallax />} />
+          <Route path="s3" element={<S3 />} />
         </Route>
       </Routes>
     </BrowserRouter>
