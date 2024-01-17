@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import FileDownload from "./pages/fileDownload/FileDownload";
 import SearchBar from "./pages/searchBar/SearchBar";
 import Loader from "./pages/loader/Loader";
 import Typewriter from "./pages/typewriter/Typewriter";
 import Parallax from "./pages/parallax/Parallax";
-
+Navigate;
 function App() {
   const [count, setCount] = useState(0);
   const linksData = [
@@ -61,7 +61,7 @@ function App() {
       done: false,
     },
     {
-      linkTopic: "TypeWriter Effect & Magnetic Button",
+      linkTopic: "Typewriter Effect + Magnetic Button",
       to: "typewriter",
       done: true,
     },
@@ -76,27 +76,25 @@ function App() {
     return (
       <div className="appPage">
         <div>
-          <h1>Vite + React</h1>
+          <h1>React Clips</h1>
+          <h3>Vite + React</h3>
+          <p>by Ashutosh Nagrale</p>
           <div className="card">
             <button onClick={() => setCount((count) => count + 1)}>
               count is {count}
             </button>
             <div className="todoList">
-              <div></div>
-              <p>TODO LIST</p>
+              <div className="yellow-color"></div>
+              <p>Todo List</p>
             </div>
             <div className="PagesContainer">
-              <ul>
-                {linksData.map((item, index) => (
-                  <li key={index}>
-                    <Link className="link" to={`/${item.to}`}>
-                      <div className={item.done ? "" : "todo"}>
-                        {item.linkTopic}
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              {linksData.map((item, index) => (
+                <Link key={index} to={item.to}>
+                  <div className={item.done ? "box" : "todo"}>
+                    <p>{item.linkTopic}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

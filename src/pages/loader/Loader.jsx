@@ -7,12 +7,14 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { gsap } from "gsap";
 
 const Loader = () => {
+  let loading = 1;
   useEffect(() => {
     const addClasses = () => {
       const loaderContainer = document.querySelector(".loader-container");
       const pageContent = document.querySelector("#page-content");
       loaderContainer.classList.add("hidden");
       pageContent.classList.add("visible");
+      loading += 1;
     };
 
     window.addEventListener("load", addClasses);

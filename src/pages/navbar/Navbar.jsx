@@ -8,10 +8,9 @@ const Navbar = () => {
     <button
       onClick={() => {
         navigate("/");
-        window.location.reload( );
       }}
     >
-      Back
+      Homepage
     </button>
   );
 };

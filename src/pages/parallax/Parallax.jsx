@@ -24,11 +24,12 @@ const Parallax = () => {
     //Lenis Ends
 
     // Parallax
-    const sunset = document.querySelector("#sunset-wrapper");
+    const sunsetWrapper = document.querySelector("#sunset-wrapper");
     const parallax = document.querySelectorAll('div[id*="sunset-bg-"]');
     const timeline = gsap.timeline({
       scrollTrigger: {
-        trigger: sunset,
+        trigger: sunsetWrapper,
+        // object position , screen position
         start: "top top",
         scrub: true,
         markers: true,
@@ -86,34 +87,35 @@ const Parallax = () => {
 
       <section id="stories">
         <header>
-          <h1>Embark on a journey into the heart of nature.</h1>
+          <h1 className="title">Jujutsu Kaisen</h1>
           <div className="divider"></div>
           <p className="lead">
-            From the howls of wolves under the moonlit sky to the ancient
-            secrets of the mountains and valleys, explore stories that bring the
-            wilderness to life.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis autem
+            dolorem minus ullam quam tenetur ipsa in itaque porro dignissimos
+            deserunt molestias non tempora illum voluptas natus quidem commodi
+            recusandae quia dicta accusantium voluptatum, voluptatibus provident
+            fugit. Eius fugit dolore, ea facere, numquam sint autem saepe, vero
+            nobis iste deleniti!
           </p>
         </header>
 
         <div className="story-list">
           <div className="story">
-            <h2>The Howl of the Midnight Wolf</h2>
+            <h2 className="title">Made in Abyss</h2>
             <p>
-              In the heart of the dense forest, where the moonlight barely
-              touches the ground, a lone wolf's howl pierces the night. It is
-              said that this is no ordinary wolf, but a guardian of ancient
-              secrets, calling out to those brave enough to uncover the
-              mysteries of the wilderness...
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
+              omnis quam nam autem nobis fuga excepturi perferendis? Doloremque
+              sed vero fugiat maiores rerum, id possimus.
             </p>
             <a href="#">Read Full Story</a>
           </div>
           <div className="story">
-            <h2>Whispers of the Forgotten Valley</h2>
+            <h2 className="title">Dragon Ball Super</h2>
             <p>
-              Nestled between towering peaks lies a valley shrouded in mist and
-              legend. Travelers speak of voices carried on the wind, a language
-              not spoken by any living creature. These whispers tell tales of a
-              time when the earth was young and nature's magic flowed freely...
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae ab quis officiis reiciendis alias dolorem, facere
+              aliquam blanditiis tenetur dignissimos itaque voluptatum minima,
+              dicta soluta placeat quisquam! Consequatur, eum ex?
             </p>
             <a href="#">Read Full Story</a>
           </div>
