@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./loader.css";
-import gallery from "./data.js";
+import gallery from "./gallery.js";
 import Navbar from "../navbar/Navbar.jsx";
 import Lenis from "@studio-freight/lenis";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

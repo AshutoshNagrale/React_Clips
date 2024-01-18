@@ -1,16 +1,36 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
-import FileDownload from "./pages/fileDownload/FileDownload";
-import SearchBar from "./pages/searchBar/SearchBar";
-import Loader from "./pages/loader/Loader";
-import Typewriter from "./pages/typewriter/Typewriter";
-import Parallax from "./pages/parallax/Parallax";
-import S3 from "./pages/s3/S3";
-Navigate;
+import SuspenseLoader from "./pages/s3/SuspenseLoader.jsx"
+
+//lazy loading issue
+import Loader from "./pages/loader/Loader.jsx"
+
+//fixed delay function to lazy load forefully after 2s
+async function delayForDemo(promise) {
+  await new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  });
+  return promise;
+}
+
+
+// lazy loading
+import { lazy } from 'react';
+const S3 = lazy(() =>  delayForDemo(import('./pages/s3/S3.jsx')))
+const SearchBar = lazy(() =>  import("./pages/searchBar/SearchBar.jsx"));
+const Typewriter = lazy(() => import( "./pages/typewriter/Typewriter"))
+const Parallax = lazy(() => import( "./pages/parallax/Parallax"))
+const FileDownload = lazy(() => import( "./pages/fileDownload/FileDownload"))
+
+
+
+
+
+
 function App() {
   const [count, setCount] = useState(0);
-  const linksData = [
+  const linksData = [   
     {
       linkTopic: "File Download Page",
       to: "fileDownload",
@@ -34,7 +54,7 @@ function App() {
     {
       linkTopic: "S3 get and post Iamges",
       to: "s3",
-      done: false,
+      done: true,
     },
     {
       linkTopic: "MongoDB Integration",
@@ -73,6 +93,7 @@ function App() {
     },
   ];
 
+  
   const AppPage = () => {
     return (
       <div className="appPage">
@@ -90,7 +111,7 @@ function App() {
             </div>
             <div className="PagesContainer">
               {linksData.map((item, index) => (
-                <Link key={index} to={item.done ? item.t : ""}>
+                <Link key={index} to={item.done ? item.to : ""}>
                   <div className={item.done ? "box" : "todo"}>
                     <p>{item.linkTopic}</p>
                   </div>
@@ -107,12 +128,13 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<AppPage />} />
-          <Route path="fileDownload" element={<FileDownload />} />
-          <Route path="searchPage" element={<SearchBar />} />
-          <Route path="loader" element={<Loader />} />
-          <Route path="typewriter" element={<Typewriter />} />
-          <Route path="parallax" element={<Parallax />} />
-          <Route path="s3" element={<S3 />} />
+          <Route path="fileDownload" element={<Suspense fallback={<SuspenseLoader />}><FileDownload /></Suspense>}/>
+          <Route path="searchPage" element={<Suspense fallback={<SuspenseLoader />}><SearchBar /></Suspense>} />
+          <Route path="loader" element={ <Loader /> } />
+          <Route path="typewriter" element={<Suspense fallback={<SuspenseLoader />}><Typewriter /></Suspense>} />
+          <Route path="parallax" element={ <Suspense fallback={<SuspenseLoader />}><Parallax /></Suspense>} />
+          <Route path="s3" element={<Suspense fallback={<SuspenseLoader />} ><S3 /></Suspense> }
+          />
         </Route>
       </Routes>
     </BrowserRouter>

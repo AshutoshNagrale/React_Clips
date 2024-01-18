@@ -10,13 +10,14 @@ const S3 = () => {
   // 1696786647218bbgfh.png
   // 1696786755590bbgfh.png
 
-  const imageName = "";
+  const imageName = "1696777733401wbh.png";
+  //GET image url from s3 using presigned url
   const getImage = async () => {
-    const imageUrl = await getImagesUrlfromS3(imageToGet);
+    const imageUrl = await getImagesUrlfromS3(imageName);
     return imageUrl;
   };
-  listFilesInBucket().then((i) => console.log(i));
-  return <div>S3</div>;
+
+  listFilesInBucket()
 };
 
 export default S3;

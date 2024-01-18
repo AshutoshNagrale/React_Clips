@@ -8,6 +8,7 @@
 *.env
 *.eslintrc.cjs
 .gitignore
+/dist
 
 # testing
 /coverage

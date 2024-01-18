@@ -11,6 +11,8 @@ const bucketregion = import.meta.env.VITE_BUCKET_REGION;
 const accesskeys = import.meta.env.VITE_ACCESS_KEYS;
 const secretaccesskeys = import.meta.env.VITE_SECRET_ACCESS_KEYS;
 
+console.log(bucketname,bucketregion)
+
 const s3 = new S3Client({
   credentials: {
     accessKeyId: accesskeys,
@@ -33,32 +35,13 @@ export const getImagesUrlfromS3 = async (image) => {
 
 // NOT WORKING
 export const listFilesInBucket = async () => {
-  const command = new ListObjectsV2Command({
-    Bucket: bucketname,
-    // The default and maximum number of keys returned is 1000. This limits it to
-    // one for demonstration purposes.
-    MaxKeys: 1,
-  });
-
-  try {
-    let isTruncated = true;
-
-    // console.log("Your bucket contains the following objects:\n");
-    let contents = "";
-
-    while (isTruncated) {
-      const { Contents, IsTruncated, NextContinuationToken } = await s3.send(
-        command
-      );
-      const contentsList = Contents.map((c) => ` • ${c.Key}`).join("\n");
-      contents += contentsList + "\n";
-      isTruncated = IsTruncated;
-      command.input.ContinuationToken = NextContinuationToken;
-    }
-    console.log(contents);
-  } catch (err) {
-    console.error(err);
-  }
+  const input = { // ListObjectsRequest
+    Bucket: bucketname, // required
+    MaxKeys: "2",
+  };
+  const command = new ListObjectsCommand(input);
+  const response = await s3.send(command);
+  console.log(response)
 };
 
 // NOT WORKING
