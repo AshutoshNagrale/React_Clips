@@ -42,20 +42,22 @@ input:focus {
 .PagesContainer {
   padding: 0 5rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(280px, 1fr));
   column-gap: 1rem;
   row-gap: 2rem;
   flex-wrap: wrap;
 }
 
-.box {
+.box {  
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   background-color: #4449a9;
   border-radius: 5px;
   height: 4.4rem;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -64,14 +66,15 @@ input:focus {
   cursor: pointer;
   background-color: #7c82ff;
   height: 4.4rem;
+  transform: scale(1.02);
 }
 
 .PagesContainer .box:hover p {
-  font-size: 1.1rem;
+  font-size: 1.22;
 }
 
 .PagesContainer .box p {
-  flex-wrap: wrap;
+  width: 100%;
   font-size: 1.2rem;
   font-weight: 400;
   color: whitesmoke;
