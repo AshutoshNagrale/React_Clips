@@ -11,6 +11,8 @@ Done:
 1. Locally Download Image using image URL
 2. SearchBar
 3. Pre Loader
+4. TypeWriter Effect
+5. Parallax Effect
 
 TODO:
 
@@ -23,8 +25,7 @@ TODO:
 7. Redis Integration
 8. Google Login
 9. Redux / Redux Toolkit
-10. TypeWriter Effect
-11. Parallax Effect
+
 
 ## Will Add more project as time passes 🚀🚀🚀
 
