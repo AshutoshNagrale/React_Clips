@@ -12,6 +12,7 @@ const bucketregion = import.meta.env.VITE_BUCKET_REGION;
 const accesskeys = import.meta.env.VITE_ACCESS_KEYS;
 const secretaccesskeys = import.meta.env.VITE_SECRET_ACCESS_KEYS;
 
+// S3
 const s3 = new S3Client({
   credentials: {
     accessKeyId: accesskeys,
@@ -20,8 +21,8 @@ const s3 = new S3Client({
   region: bucketregion,
 });
 
-//Working
-export const getImagesUrlfromS3 = async (filename) => {
+//GET SIGNED URL FOR SINGLE OBJECT
+export const getImageUrlfromS3 = async (filename) => {
   const getObjectParams = {
     Bucket: bucketname,
     Key: filename,
@@ -32,12 +33,12 @@ export const getImagesUrlfromS3 = async (filename) => {
   return url;
 };
 
-//WORKING
-export const listFilesInBucket = async () => {
+//LIST ALL OBJECTS OF BUCKET
+export const listFilesInBucket = async (maxkey) => {
   const params = {
     // ListObjectsRequest
     Bucket: bucketname, // required
-    MaxKeys: "10",
+    MaxKeys: maxkey,
   };
 
   const command = new ListObjectsCommand(params);
@@ -46,53 +47,43 @@ export const listFilesInBucket = async () => {
   return contentsList;
 };
 
-// NOT WORKING
-export const createPresignedUrlWithClient = ({ key }) => {
+// PUT OBJECTS INTO BUCKET USING SIGNED URL
+export const createPresignedUrlWithClient = async (key) => {
   const command = new PutObjectCommand({ Bucket: bucketname, Key: key });
-  return getSignedUrl(s3, command, { expiresIn: 3600 });
+  return await getSignedUrl(s3, command, { expiresIn: 3600 });
 };
 
-function put(url, data) {
-  return new Promise((resolve, reject) => {
-    const req = https.request(
-      url,
-      { method: "PUT", headers: { "Content-Length": new Blob([data]).size } },
-      (res) => {
-        let responseBody = "";
-        res.on("data", (chunk) => {
-          responseBody += chunk;
-        });
-        res.on("end", () => {
-          resolve(responseBody);
-        });
-      }
-    );
-    req.on("error", (err) => {
-      reject(err);
-    });
-    req.write(data);
-    req.end();
-  });
-}
-export const main = async () => {
-  const KEY = "src/assets/g2.jpg";
-
-  // There are two ways to generate a presigned URL.
-  // 1. Use createPresignedUrl without the S3 client.
-  // 2. Use getSignedUrl in conjunction with the S3 client and GetObjectCommand.
+//PUT OBJECT IN S3 USING PRE SIGNED URL GOT FROM
+// createPresignedUrlWithClient METHOD
+export const uploadObjectIntoS3 = async () => {
   try {
-    const clientUrl = await createPresignedUrlWithClient({
-      key: KEY,
+    const s3_upload_url = await createPresignedUrlWithClient(selectedFile.name);
+
+    const response = await axios.put(s3_upload_url, selectedFile, {
+      headers: {
+        "Content-Type": selectedFile.type,
+      },
     });
 
-    // After you get the presigned URL, you can provide your own file
-    // data. Refer to put() above.
+    console.log("File uploaded successfully:", response.data);
+  } catch (error) {
+    console.error("Error uploading file:", error);
+  }
+};
 
-    console.log("Calling PUT using presigned URL with client");
-    await put(clientUrl, "Hello World");
+//LoadObjects with marker
+export const loadObjects = async (nextmarker) => {
+  try {
+    const params = {
+      Bucket: bucketname,
+      Marker: nextmarker,
+      MaxKeys: 5,
+    };
 
-    console.log("\nDone. Check your S3 console.");
-  } catch (err) {
-    console.error(err);
+    const data = new ListObjectsCommand(params);
+    const res = await s3.send(data);
+    return res;
+  } catch (error) {
+    console.error("Error fetching S3 objects:", error);
   }
 };
