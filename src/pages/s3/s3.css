@@ -1,12 +1,205 @@
 .s3Container {
-  width: 100%;
-  height: 100dvh;
-  display: grid;
-  justify-content: center;
-  align-items: center;
+  padding: 2rem;
+  overflow: hidden;
+  background-color: white;
+  color: black;
 }
 
 .s3Container .title {
+  padding: 10px 0;
   font-size: 2rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.s3Wrapper {
+  background-color: green;
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px;
+  background-color: rgba(102, 51, 153, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.s3Wrapper > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px 10px;
+  font-size: 24px;
+}
+
+.GetObject {
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+.allObjects {
+  grid-row-start: 4;
+}
+.uploadObject {
+  grid-row-start: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+.uploadText,
+.deleteText,
+.storageText,
+.searchObjectText {
+  padding: 0px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.uploadObject label,
+.deleteObject label {
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.uploadObject input {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border: 0.5px solid gray;
+  background-color: white;
+  border-radius: 7px;
+}
+.uploadObject input::file-selector-button {
+  height: 100%;
+  overflow: hidden;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  padding: 0.5em;
+  border: none;
+  border-radius: 7px;
+}
+.uploadObject button,
+.deleteObject button {
+  border: none;
+  align-items: center;
+  padding: 7px 0;
+  margin: 0;
+  width: 100%;
+  background-color: #18181b;
+  color: white;
+}
+
+.uploadObject button:hover,
+.deleteObject button:hover {
+  background-color: #18181bd2;
+}
+.deleteObject {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.deleteObject input {
+  border-radius: 7px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border: 0.5px solid gray;
+  color: #18181b;
+}
+
+.deleteObject input[type="text"],
+select {
+  width: 100%;
+  padding: 0 20px;
+  margin: 0;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+th.objectName {
+  width: 40%;
+}
+th.objectSize {
+  width: 10%;
+}
+th.objectLastModified {
+  width: 30%;
+}
+th.objectView {
+  width: 10%;
+}
+th.objectAction {
+  width: 10%;
+}
+table th {
+  width: 200px;
+  padding: 10px;
+}
+thead tr th {
+  font-weight: 500;
+}
+
+table tr {
+  border-bottom: 0.1px solid gray;
+}
+tbody tr:nth-last-child(1) {
+  border-bottom: none;
+}
+tbody td {
+  text-align: center;
+}
+tbody tr td:nth-child(1) {
+  padding: 0px 15px;
+}
+
+tr td:nth-child(4) button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 1.2rem;
+  margin: 0;
+  background-color: #71be5a;
+  color: white;
+  vertical-align: middle;
+  border: none;
+}
+
+tr td:nth-child(5) button {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 1.2rem;
+  margin: 0;
+  background-color: #ef4444;
+  color: white;
+  vertical-align: middle;
+  border: none;
+}
+
+tr td {
+  padding: 10px;
+}
+
+tbody tr:hover {
+  background-color: rgb(241, 241, 241);
+}
+
+tr td:nth-child(3) {
+  font-size: 18px;
+}
+
+.objectKey {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

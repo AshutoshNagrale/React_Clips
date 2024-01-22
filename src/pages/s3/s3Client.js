@@ -4,8 +4,11 @@ import {
   GetObjectCommand,
   ListObjectsCommand,
   PutObjectCommand,
+  DeleteObjectCommand,
+  ListObjectsV2Command,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import axios from "axios";
 
 const bucketname = import.meta.env.VITE_BUCKET_NAME;
 const bucketregion = import.meta.env.VITE_BUCKET_REGION;
@@ -41,7 +44,7 @@ export const listFilesInBucket = async (maxkey) => {
     MaxKeys: maxkey,
   };
 
-  const command = new ListObjectsCommand(params);
+  const command = new ListObjectsV2Command(params);
   const { Contents } = await s3.send(command);
   const contentsList = Contents.map((c) => ` • ${c.Key}`).join("\n");
   return contentsList;
@@ -55,13 +58,17 @@ export const createPresignedUrlWithClient = async (key) => {
 
 //PUT OBJECT IN S3 USING PRE SIGNED URL GOT FROM
 // createPresignedUrlWithClient METHOD
-export const uploadObjectIntoS3 = async () => {
+export const uploadObjectIntoS3 = async (selectedFile, setUploadinProgress) => {
   try {
     const s3_upload_url = await createPresignedUrlWithClient(selectedFile.name);
 
     const response = await axios.put(s3_upload_url, selectedFile, {
       headers: {
         "Content-Type": selectedFile.type,
+      },
+      onUploadProgress: (progressEvent) => {
+        console.log(progressEvent, progressEvent.loaded);
+        setUploadinProgress(progressEvent.progress);
       },
     });
 
@@ -77,13 +84,30 @@ export const loadObjects = async (nextmarker) => {
     const params = {
       Bucket: bucketname,
       Marker: nextmarker,
-      MaxKeys: 5,
+      MaxKeys: "10",
+      Prefix: "",
     };
 
-    const data = new ListObjectsCommand(params);
+    const data = new ListObjectsV2Command(params);
     const res = await s3.send(data);
     return res;
   } catch (error) {
     console.error("Error fetching S3 objects:", error);
+  }
+};
+
+//DELETE OBJECT FROM BUCKET
+export const deleteObject = async (key) => {
+  const input = {
+    Bucket: bucketname,
+    Key: key,
+  };
+  const command = new DeleteObjectCommand(input);
+
+  try {
+    const response = await s3.send(command);
+    console.log(response);
+  } catch (err) {
+    console.error(err);
   }
 };
