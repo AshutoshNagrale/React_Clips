@@ -202,15 +202,4 @@ div[id*="sunset-bg-"] {
   left: 0;
 }
 
-#sunset-bg-1 {
-  /* background-image: url("./parallax/Group-1.svg"); */
-}
-#sunset-bg-2 {
-  background-image: url("./parallax/Group-2.svg");
-}
-#sunset-bg-3 {
-  background-image: url("./parallax/Group-3.svg");
-}
-#sunset-bg-4 {
-  background-image: url("./parallax/Group-5.svg");
-}
+  

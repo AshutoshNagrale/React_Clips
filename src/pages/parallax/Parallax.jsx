@@ -58,9 +58,21 @@ const Parallax = () => {
             style={{ backgroundImage: 'url("./parallax/Group-1.svg")' }}
             data-speed="0.2"
           ></div>
-          <div id="sunset-bg-2" data-speed="2"></div>
-          <div id="sunset-bg-3" data-speed="3"></div>
-          <div id="sunset-bg-4" data-speed="6"></div>
+          <div
+            id="sunset-bg-2"
+            style={{ backgroundImage: 'url("./parallax/Group-2.svg")' }}
+            data-speed="2"
+          ></div>
+          <div
+            id="sunset-bg-3"
+            style={{ backgroundImage: 'url("./parallax/Group-3.svg")' }}
+            data-speed="3"
+          ></div>
+          <div
+            id="sunset-bg-4"
+            style={{ backgroundImage: 'url("./parallax/Group-5.svg")' }}
+            data-speed="6"
+          ></div>
         </div>
 
         <header id="main-header">
