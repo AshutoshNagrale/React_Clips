@@ -61,13 +61,13 @@ export const createPresignedUrlWithClient = async (key) => {
 export const uploadObjectIntoS3 = async (selectedFile, setUploadinProgress) => {
   try {
     const s3_upload_url = await createPresignedUrlWithClient(selectedFile.name);
-
+    // console.log(s3_upload_url);
     const response = await axios.put(s3_upload_url, selectedFile, {
       headers: {
         "Content-Type": selectedFile.type,
       },
       onUploadProgress: (progressEvent) => {
-        console.log(progressEvent, progressEvent.loaded);
+        // console.log(progressEvent, progressEvent.loaded);
         setUploadinProgress(progressEvent.progress);
       },
     });

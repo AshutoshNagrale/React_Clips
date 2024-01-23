@@ -29,7 +29,7 @@ const S3 = () => {
   const deleteInputRef = useRef();
 
   useEffect(() => {
-    console.log("UseEffect");
+    // console.log("UseEffect");
     function main() {
       loadObjects(nextContinuationToken).then((res) => {
         const { Contents } = res;
@@ -48,13 +48,13 @@ const S3 = () => {
     main();
   }, []);
 
-  console.log("objects", objects);
+  // console.log("objects", objects);
   // console.log("nextContinuationToken", nextContinuationToken);
   const handleLoadMore = () => {
     console.log("HandleMoreButton");
     loadObjects(nextContinuationToken)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         const { Contents } = res;
         setObjects((prev) => [...prev, ...Contents]);
         const lastMarker = res?.IsTruncated
