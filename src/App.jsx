@@ -30,7 +30,12 @@ const FileDownload = lazy(() => import( "./pages/fileDownload/FileDownload"))
 
 function App() {
   const [count, setCount] = useState(0);
-  const linksData = [   
+  const linksData = [
+    {
+      linkTopic: "TODO",
+      to: "",
+      done: false,
+    },
     {
       linkTopic: "File Download Page",
       to: "fileDownload",
@@ -90,6 +95,16 @@ function App() {
       linkTopic: "Parallax Effect",
       to: "parallax",
       done: true,
+    },
+    {
+      linkTopic: "Socket.io",
+      to: "",
+      done: false,
+    },
+    {
+      linkTopic: "GOOGLE Drive API Integration",
+      to: "",
+      done: false,
     },
   ];
 

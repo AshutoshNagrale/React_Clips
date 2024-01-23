@@ -9,7 +9,6 @@ import {
   deleteObject,
 } from "./s3Client";
 
-import axios from "axios";
 import Navbar from "../navbar/Navbar";
 
 // Images Names
