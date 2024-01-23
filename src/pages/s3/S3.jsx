@@ -10,6 +10,7 @@ import {
 } from "./s3Client";
 
 import axios from "axios";
+import Navbar from "../navbar/Navbar";
 
 // Images Names
 // 1696777733401wbh.png
@@ -145,6 +146,7 @@ const S3 = () => {
   return (
     <>
       <div className="s3Container">
+        <Navbar />
         <div className="title">AWS S3 Manager</div>
         <div className="s3Wrapper">
           {/* getObjects */}
