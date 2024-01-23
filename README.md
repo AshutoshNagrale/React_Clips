@@ -13,18 +13,20 @@ Done:
 3. Pre Loader
 4. TypeWriter Effect
 5. Parallax Effect
+6. S3 Manager
 
 TODO:
 
-1. Calculator
-2. TODO App
-3. Calculator with Redux
-4. S3 get and post Iamges
-5. MongoDB Integration
-6. MYSQL Integration
-7. Redis Integration
-8. Google Login
-9. Redux / Redux Toolkit
+
+1. TODO App
+2. Calculator with Redux
+3. MongoDB Integration
+4. MYSQL Integration
+5. Redis Integration
+6. Google Login
+7. Redux / Redux Toolkit
+8. Socket.io
+9. Drive API Integration
 
 
 ## Will Add more project as time passes 🚀🚀🚀
