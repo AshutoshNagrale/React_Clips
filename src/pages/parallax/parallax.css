@@ -32,7 +32,7 @@ h1 {
 h2 {
   font-size: 2rem;
   margin: 0 0 2rem;
-  color:white
+  color: white;
 }
 
 #hero {
@@ -203,14 +203,14 @@ div[id*="sunset-bg-"] {
 }
 
 #sunset-bg-1 {
-  background-image: url("./src/assets/parallax/Group-1.svg");
+  background-image: url("./parallax/Group-1.svg");
 }
 #sunset-bg-2 {
-  background-image: url("./src/assets/parallax/Group-2.svg");
+  background-image: url("./parallax/Group-2.svg");
 }
 #sunset-bg-3 {
-  background-image: url("./src/assets/parallax/Group-3.svg");
+  background-image: url("./parallax/Group-3.svg");
 }
 #sunset-bg-4 {
-  background-image: url("./src/assets/parallax/Group-5.svg");
+  background-image: url("./parallax/Group-5.svg");
 }

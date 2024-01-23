@@ -32,7 +32,7 @@ const Parallax = () => {
         // object position , screen position
         start: "top top",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
     parallax.forEach((bg) => {
@@ -62,7 +62,7 @@ const Parallax = () => {
         <header id="main-header">
           <Navbar />
           <a href="/">
-            <img src="./src/assets/parallax/logo-ww.svg" alt="Logo" />
+            <img src="./parallax/logo-ww.svg" alt="Logo" />
           </a>
         </header>
 
