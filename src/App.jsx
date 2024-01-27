@@ -1,32 +1,26 @@
 import React, { useState, useRef, useEffect, Suspense } from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
-import SuspenseLoader from "./pages/s3/SuspenseLoader.jsx"
+import SuspenseLoader from "./pages/s3/SuspenseLoader.jsx";
 
 //lazy loading issue
-import Loader from "./pages/loader/Loader.jsx"
+import Loader from "./pages/loader/Loader.jsx";
 
 //fixed delay function to lazy load forefully after 2s
 async function delayForDemo(promise) {
-  await new Promise(resolve => {
+  await new Promise((resolve) => {
     setTimeout(resolve, 2000);
   });
   return promise;
 }
 
-
 // lazy loading
-import { lazy } from 'react';
-const S3 = lazy(() =>  delayForDemo(import('./pages/s3/S3.jsx')))
-const SearchBar = lazy(() =>  import("./pages/searchBar/SearchBar.jsx"));
-const Typewriter = lazy(() => import( "./pages/typewriter/Typewriter"))
-const Parallax = lazy(() => import( "./pages/parallax/Parallax"))
-const FileDownload = lazy(() => import( "./pages/fileDownload/FileDownload"))
-
-
-
-
-
+import { lazy } from "react";
+const S3 = lazy(() => delayForDemo(import("./pages/s3/S3.jsx")));
+const SearchBar = lazy(() => import("./pages/searchBar/SearchBar.jsx"));
+const Typewriter = lazy(() => import("./pages/typewriter/Typewriter"));
+const Parallax = lazy(() => import("./pages/parallax/Parallax"));
+const FileDownload = lazy(() => import("./pages/fileDownload/FileDownload"));
 
 function App() {
   const [count, setCount] = useState(0);
@@ -108,22 +102,13 @@ function App() {
     },
   ];
 
-  
   const AppPage = () => {
     return (
       <div className="appPage">
         <div>
           <h1>React Clips</h1>
-          <h3>Vite + React</h3>
           <p>by Ashutosh Nagrale</p>
           <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-              count is {count}
-            </button>
-            <div className="todoList">
-              <div className="yellow-color"></div>
-              <p>Todo List</p>
-            </div>
             <div className="PagesContainer">
               {linksData.map((item, index) => (
                 <Link key={index} to={item.done ? item.to : ""}>
@@ -143,12 +128,46 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<AppPage />} />
-          <Route path="fileDownload" element={<Suspense fallback={<SuspenseLoader />}><FileDownload /></Suspense>}/>
-          <Route path="searchPage" element={<Suspense fallback={<SuspenseLoader />}><SearchBar /></Suspense>} />
-          <Route path="loader" element={ <Loader /> } />
-          <Route path="typewriter" element={<Suspense fallback={<SuspenseLoader />}><Typewriter /></Suspense>} />
-          <Route path="parallax" element={ <Suspense fallback={<SuspenseLoader />}><Parallax /></Suspense>} />
-          <Route path="s3" element={<Suspense fallback={<SuspenseLoader />} ><S3 /></Suspense> }
+          <Route
+            path="fileDownload"
+            element={
+              <Suspense fallback={<SuspenseLoader />}>
+                <FileDownload />
+              </Suspense>
+            }
+          />
+          <Route
+            path="searchPage"
+            element={
+              <Suspense fallback={<SuspenseLoader />}>
+                <SearchBar />
+              </Suspense>
+            }
+          />
+          <Route path="loader" element={<Loader />} />
+          <Route
+            path="typewriter"
+            element={
+              <Suspense fallback={<SuspenseLoader />}>
+                <Typewriter />
+              </Suspense>
+            }
+          />
+          <Route
+            path="parallax"
+            element={
+              <Suspense fallback={<SuspenseLoader />}>
+                <Parallax />
+              </Suspense>
+            }
+          />
+          <Route
+            path="s3"
+            element={
+              <Suspense fallback={<SuspenseLoader />}>
+                <S3 />
+              </Suspense>
+            }
           />
         </Route>
       </Routes>
