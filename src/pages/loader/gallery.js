@@ -1,6 +1,6 @@
 const gallery = [
   {
-    src: "./src/assets/g2.jpg",
+    src: "./g2.jpg",
     alt: "Great Barrier Reef, Australia",
     days: "9-day trip",
     title: "Great Barrier Reef",

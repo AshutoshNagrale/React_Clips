@@ -40,9 +40,9 @@ const SearchBar = () => {
           Search
         </label>
         <input
+          className="searchInput"
           type="text"
           id="search"
-          className="search"
           onChange={handleSearch}
           placeholder="Type text"
         />

@@ -1,0 +1,72 @@
+:root {
+  --loader-text-color: #f6e9fe;
+  --loader-dot-color: #a51ff6;
+  --loader-bg: #191819;
+  --def-transition-duration: 0.3s;
+}
+.loader-container {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: var(--loader-bg);
+  display: grid;
+  place-content: center;
+  transition: opacity 0.5s 0.1s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+svg {
+  width: 50rem;
+  font-weight: 500;
+}
+
+svg text {
+  font-size: 5rem;
+  stroke-width: 2;
+  letter-spacing: 1px;
+}
+
+svg text.text-body {
+  stroke: var(--loader-text-color);
+  animation: 4s infinite alternate animate-stroke;
+}
+
+svg text.text-dot {
+  fill: var(--loader-dot-color);
+  stroke: var(--loader-dot-color);
+  animation: 4s infinite alternate animate-dot;
+}
+
+@keyframes animate-stroke {
+  0% {
+    fill: transparent;
+    stroke: var(--loader-text-color);
+    stroke-width: 3;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 32%;
+  }
+
+  50% {
+    fill: transparent;
+    stroke: var(--loader-text-color);
+    stroke-width: 3;
+  }
+
+  80%,
+  100% {
+    fill: var(--loader-text-color);
+    stroke: transparent;
+    stroke-width: 0;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 32% 0;
+  }
+}
+
+@keyframes animate-dot {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

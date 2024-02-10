@@ -106,6 +106,7 @@ const S3 = () => {
     }
     inputFileRef.current.value = null;
     setUploding(false);
+    window.location.reload();
   };
 
   async function deleteFileFromS3() {
@@ -182,15 +183,6 @@ const S3 = () => {
               </tbody>
             </table>
           </div>
-          {/* ALLObjects */}
-          {/* <div className="allObjects">
-            <div className="storageText">Storage</div>
-
-            {nextContinuationToken && (
-              <button onClick={handleLoadMore}>Load More</button>
-            )}
-          </div> */}
-          {/* UploadObejct */}
           <div className="uploadObject">
             <div className="uploadText">UploadObject</div>
             <label htmlFor="uploadfile">File</label>
@@ -211,22 +203,6 @@ const S3 = () => {
                 : "Upload"}
             </button>
           </div>
-          {/* DeleteObjects */}
-          {/* <div className="deleteObject">
-            <div className="deleteText">DeleteObject</div>
-            <label htmlFor="deletefile">File</label>
-            <input
-              ref={deleteInputRef}
-              id="deletefile"
-              type="text"
-              className="uploadInput"
-              placeholder="Type the Filename you want to Delete"
-              onChange={handleDeleteFileInput}
-            />
-            <button className="uploadButton" onClick={deleteFileFromS3}>
-              {deleting ? "Deleting" : "Delete"}
-            </button>
-          </div> */}
         </div>
       </div>
     </>

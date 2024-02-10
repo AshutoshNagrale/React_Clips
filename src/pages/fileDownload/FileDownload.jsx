@@ -43,14 +43,14 @@ const FileDownload = () => {
 
   return (
     <div className="fileDownloadContainer">
-      <Navbar />
+      <Navbar className="buttonSize" />
       <input
         className="fileInput"
         type="text"
         placeholder={"Provide Link of Image"}
         onChange={handleChange}
       />
-      <button className="fileDownloadButton" onClick={getFile}>
+      <button className="downloadButton" onClick={getFile}>
         {loading ? "Downloading...." : "Download File"}
       </button>
       {error && "Error Getting Image. Check the image address"}
@@ -58,12 +58,14 @@ const FileDownload = () => {
       <div className="linkComponent">
         <p>Provide Full Url of Image</p>
         <p>Example : https://www.demo-image.jpg</p>
-        <p >Before using visit this site below, to  get temporarily access to the demo</p>
         <p>
-          <a href="https://cors-anywhere.herokuapp.com/" target="blank"><u>
-            https://cors-anywhere.herokuapp.com/
-            </u>
-            </a>
+          Before using visit this site below, to get temporarily access to the
+          demo
+        </p>
+        <p>
+          <a href="https://cors-anywhere.herokuapp.com/" target="blank">
+            <u>https://cors-anywhere.herokuapp.com/</u>
+          </a>
         </p>
       </div>
     </div>

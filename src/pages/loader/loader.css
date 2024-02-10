@@ -1,10 +1,3 @@
-:root {
-  --loader-text-color: #f6e9fe;
-  --loader-dot-color: #a51ff6;
-  --loader-bg: #191819;
-  --def-transition-duration: 0.3s;
-}
-
 html.lenis {
   height: auto;
 }
@@ -24,7 +17,6 @@ html.lenis {
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
 }
-
 
 html {
   font-size: 16px;
@@ -239,7 +231,7 @@ figure footer {
 }
 
 /* loading login */
-.loader-container.hidden {
+/* .loader-container.hidden {
   opacity: 0;
   visibility: hidden;
 }
@@ -309,4 +301,4 @@ svg text.dot {
   100% {
     opacity: 1;
   }
-}
+} */

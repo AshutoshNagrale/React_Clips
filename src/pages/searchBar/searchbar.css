@@ -1,18 +1,29 @@
+.searchContainer {
+  padding: 10px;
+}
 .searchWrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
-  padding: .5rem;
+  display: grid;
+  place-items: center;
 }
 .searchTitle {
   font-size: 2rem;
 }
-input {
-  font-size: 1.2rem;
+
+.searchInput {
+  width: 50%;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding-inline-start: 10px;
+  transition: border-color 0.25s;
 }
 
+.searchInput:focus {
+  border: 1px solid #646cff;
+}
 .userCards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

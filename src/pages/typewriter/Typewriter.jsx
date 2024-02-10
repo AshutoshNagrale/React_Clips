@@ -146,6 +146,7 @@ const Typewriter = () => {
       <p>Typewriter Effect</p>
       <h1>
         <>Creating and Crafting Projects with</>
+        <br />
         <span id="typewriter"></span>
         <span id="cursor">|</span>
       </h1>

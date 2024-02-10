@@ -1,22 +1,21 @@
-import React, { useState, useRef, useEffect, Suspense } from "react";
 import "./App.css";
+import React, { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 import SuspenseLoader from "./pages/s3/SuspenseLoader.jsx";
-
-//lazy loading issue
-import Loader from "./pages/loader/Loader.jsx";
+import NameLoader from "./pages/nameLoader/NameLoader.jsx";
 
 //fixed delay function to lazy load forefully after 2s
 async function delayForDemo(promise) {
   await new Promise((resolve) => {
-    setTimeout(resolve, 2000);
+    setTimeout(resolve, 5000);
   });
   return promise;
 }
+// issue
 
 // lazy loading
-import { lazy } from "react";
-const S3 = lazy(() => delayForDemo(import("./pages/s3/S3.jsx")));
+const Loader = lazy(() => delayForDemo(import("./pages/loader/Loader.jsx")));
+const S3 = lazy(() => import("./pages/s3/S3.jsx"));
 const SearchBar = lazy(() => import("./pages/searchBar/SearchBar.jsx"));
 const Typewriter = lazy(() => import("./pages/typewriter/Typewriter"));
 const Parallax = lazy(() => import("./pages/parallax/Parallax"));
@@ -144,7 +143,14 @@ function App() {
               </Suspense>
             }
           />
-          <Route path="loader" element={<Loader />} />
+          <Route
+            path="loader"
+            element={
+              <Suspense fallback={<NameLoader />}>
+                <Loader />
+              </Suspense>
+            }
+          />
           <Route
             path="typewriter"
             element={
@@ -166,6 +172,14 @@ function App() {
             element={
               <Suspense fallback={<SuspenseLoader />}>
                 <S3 />
+              </Suspense>
+            }
+          />{" "}
+          <Route
+            path="nameloader"
+            element={
+              <Suspense fallback={<SuspenseLoader />}>
+                <NameLoader />
               </Suspense>
             }
           />

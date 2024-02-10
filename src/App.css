@@ -8,22 +8,6 @@ body {
   height: 100%;
 }
 
-input {
-  width: 500px;
-  height: 40px;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  outline: none;
-  font-size: 18px;
-  font-weight: 500;
-  padding-inline-start: 10px;
-  transition: border-color 0.25s;
-}
-
-input:focus {
-  border: 1px solid #646cff;
-}
-
 .appPage {
   padding: 1rem 1rem;
   display: flex;
@@ -37,7 +21,7 @@ input:focus {
 
 .appPage div h1,
 .appPage div h3 {
-  padding: 5px;
+  /* padding: 5px; */
   margin: 0;
 }
 

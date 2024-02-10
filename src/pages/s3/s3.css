@@ -69,7 +69,7 @@
   border-radius: 7px;
 }
 .uploadObject input::file-selector-button {
-  height: 100%;
+  height: 40px;
   overflow: hidden;
   font-weight: bold;
   color: black;
@@ -82,7 +82,7 @@
 .deleteObject button {
   border: none;
   align-items: center;
-  padding: 7px 0;
+  padding: 5px 0;
   margin: 0;
   width: 100%;
   background-color: #18181b;
@@ -202,4 +202,16 @@ tr td:nth-child(3) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  table {
+    font-size: 12px;
+  }
+  button {
+    font-size: 12px;
+  }
+  tbody tr th {
+    font-size: 12px;
+  }
 }

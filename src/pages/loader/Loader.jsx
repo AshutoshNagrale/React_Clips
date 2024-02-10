@@ -15,7 +15,7 @@ const Loader = () => {
       pageContent.classList.add("visible");
     };
 
-    window.addEventListener("load", addClasses);
+    // window.addEventListener("load", addClasses);
 
     // LENIS Smooth scrolling
     const lenis = new Lenis();
@@ -29,7 +29,7 @@ const Loader = () => {
 
   return (
     <>
-      <div className="loader-container">
+      {/* <div className="loader-container">
         <svg viewBox="0 0 400 160">
           <text
             x="50%"
@@ -47,11 +47,11 @@ const Loader = () => {
             dx="2.4em"
             textAnchor="middle"
             className="text-body"
-          >
+          > 
             .
           </text>
         </svg>
-      </div>
+      </div> */}
       <section id="page-content">
         <header>
           <Navbar />
@@ -86,10 +86,7 @@ const Loader = () => {
                       <p className="price">{item.price}</p>
                     </div>
 
-                    <img
-                      src="./src/assets/icon-arrow-right-color.svg"
-                      alt="Icon"
-                    />
+                    <img src="./icon-arrow-right-color.svg" alt="Icon" />
                   </footer>
                 </figcaption>
               </figure>
