@@ -20,7 +20,7 @@ const SearchBar = lazy(() => import("./pages/searchBar/SearchBar.jsx"));
 const Typewriter = lazy(() => import("./pages/typewriter/Typewriter"));
 const Parallax = lazy(() => import("./pages/parallax/Parallax"));
 const FileDownload = lazy(() => import("./pages/fileDownload/FileDownload"));
-const Pagination = lazy(() => import("./pages/pagination/Pagination"));
+const PaginationMain = lazy(() => import("./pages/pagination/Main.jsx"));
 
 function App() {
   const [count, setCount] = useState(0);
@@ -183,7 +183,7 @@ function App() {
           path="pagination"
           element={
             <Suspense fallback={<SuspenseLoader />}>
-              <Pagination />
+              <PaginationMain />
             </Suspense>
           }
         />
