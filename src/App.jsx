@@ -20,6 +20,7 @@ const SearchBar = lazy(() => import("./pages/searchBar/SearchBar.jsx"));
 const Typewriter = lazy(() => import("./pages/typewriter/Typewriter"));
 const Parallax = lazy(() => import("./pages/parallax/Parallax"));
 const FileDownload = lazy(() => import("./pages/fileDownload/FileDownload"));
+const Pagination = lazy(() => import("./pages/pagination/Pagination"));
 
 function App() {
   const [count, setCount] = useState(0);
@@ -87,6 +88,10 @@ function App() {
     {
       linkTopic: "Parallax Effect",
       to: "parallax",
+      done: true,
+    },  {
+      linkTopic: "Pagination",
+      to: "pagination",
       done: true,
     },
     {
@@ -174,7 +179,14 @@ function App() {
                 <S3 />
               </Suspense>
             }
-          />{" "}
+          />  <Route
+          path="pagination"
+          element={
+            <Suspense fallback={<SuspenseLoader />}>
+              <Pagination />
+            </Suspense>
+          }
+        />
           <Route
             path="nameloader"
             element={
