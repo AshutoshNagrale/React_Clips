@@ -1,7 +1,11 @@
-import React from "react"
-import "./pagination.css"
+import React, { useMemo } from "react";
+import "./pagination.css";
+import { usePagination, DOTS } from "./usePagination.js";
 
-const Pagination = () =>{
-    return <>Pagination</>
-}
+const Pagination = (props) => {
+
+    const {onPageChange,totalCount,siblingCount = 1,currentPage,pageSize,} = props
+  return <>Pagination</>;
+};
+
 export default Pagination;
