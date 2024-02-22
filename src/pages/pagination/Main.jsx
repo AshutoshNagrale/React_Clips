@@ -3,18 +3,25 @@ import data from "./data.json";
 import Pagination from "./Pagination";
 import "./styles.css";
 
-let pageSize = 10;
-
 const Main = () => {
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [pageSize, setPageSize] = useState(10);
   const currentTableData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * pageSize;
     const lastPageIndex = firstPageIndex + pageSize;
     return data.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage]);
+  }, [currentPage, pageSize]);
   return (
     <>
+      <div className="page-size-input">
+        <h3>Page Size</h3>
+        <input
+          min="0"
+          type="number"
+          onInput={(e) => setPageSize(e.target.value)}
+          placeholder={pageSize}
+        />
+      </div>
       <table>
         <thead>
           <tr>
@@ -26,7 +33,7 @@ const Main = () => {
           </tr>
         </thead>
         <tbody>
-          {currentTableData.map((item,index) => {
+          {currentTableData.map((item, index) => {
             return (
               <tr key={index}>
                 <td>{item.id}</td>

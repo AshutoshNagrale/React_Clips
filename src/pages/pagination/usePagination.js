@@ -1,14 +1,18 @@
 //custom Pagination Hook
+import { useMemo } from "react";
+export const DOTS = "...";
+
+const range = (start, end) => {
+  let length = end - start + 1;
+  return Array.from({ length }, (_, index) => index + start);
+};
+
 export const usePagination = ({
   totalCount,
   pageSize,
   siblingCount = 1,
   currentPage,
 }) => {
-  const range = (start, end) => {
-    let length = end - start + 1;
-    return Array.from({ length }, (_, index) => index + start);
-  };
   const paginationRange = useMemo(() => {
     // total pages count
     const totalPageCount = Math.ceil(totalCount / pageSize);
@@ -35,7 +39,7 @@ export const usePagination = ({
     if (!shouldShowLeftDots && shouldShowRightDots) {
       let leftItemCount = 3 + 2 * siblingCount;
       let leftRange = range(1, leftItemCount);
-      return [...leftItemCount, DOTS, totalPageCount];
+      return [...leftRange, DOTS, totalPageCount];
     }
 
     //case 3
