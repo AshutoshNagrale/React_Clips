@@ -117,7 +117,9 @@ const Parallax = () => {
 
         <div className="story-list">
           <div className="story">
-            <h2 className="title">Made in Abyss</h2>
+            <h2 className="title" onClick={() => changeName()}>
+              Made in Abyss
+            </h2>
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam
               omnis quam nam autem nobis fuga excepturi perferendis? Doloremque

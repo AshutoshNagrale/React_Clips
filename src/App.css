@@ -101,3 +101,35 @@ body {
   cursor: default;
   user-select: none;
 }
+
+/* redux page css */
+.redux-page {
+  padding: 5px;
+}
+.imp-text {
+  color: #7c82ff;
+}
+.redux-input,
+.redux-page button {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  width: 200px;
+  padding: 10px;
+  font-size: 14px;
+  margin: 0 5px;
+  align-items: center;
+  outline: none;
+}
+.ul-Items {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 0;
+  padding: 5px;
+  list-style-type: none;
+}
+.redux-page img {
+  border: 2px solid gray;
+  object-fit: cover;
+}
+/* end */
