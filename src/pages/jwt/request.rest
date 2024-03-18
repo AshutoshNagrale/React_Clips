@@ -1,0 +1,20 @@
+GET http://localhost:8000/health
+
+###
+
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{ "username" : "sam"}
+
+###
+GET http://localhost:8000/post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoic2FtIiwiaWF0IjoxNzEwNTExNzYzfQ.Mvp2Z2QZCBuqgzdm2KWRbRYnlYnCBDbbimsKpI6I8VE
+
+
+###
+
+POST https://organic-fishstick-ggx55gxvvvgfw6pv-4000.app.github.dev/health
+Content-Type: application/json
+
+{"username":"sam"}
