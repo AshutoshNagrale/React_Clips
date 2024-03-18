@@ -24,7 +24,9 @@ body {
   /* padding: 5px; */
   margin: 0;
 }
-
+.title-name {
+  inset: 0;
+}
 .PagesContainer {
   padding-top: 2rem;
   display: grid;
@@ -43,17 +45,18 @@ body {
   flex-wrap: wrap;
   background-color: #4449a9;
   border-radius: 5px;
-  height: 4.4rem;
+  height: 4rem;
   transition: all 0.3s ease-in-out;
   text-overflow: ellipsis;
   overflow: hidden;
+  font-size: 20px;
 }
 
 .box:hover {
   cursor: pointer;
   background-color: #7c82ff;
-  height: 4.4rem;
   transform: scale(1.02);
+  transition: all 0.6s ease-in-out;
 }
 
 .PagesContainer .box:hover p {
@@ -62,7 +65,7 @@ body {
 
 .PagesContainer .box p {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: whitesmoke;
   transition: font-size 0.1s ease-in-out;
@@ -88,7 +91,7 @@ body {
   border-radius: 5px;
   place-content: center;
   align-items: center;
-  height: 4.4rem;
+  height: 4rem;
 }
 
 .todo p {

@@ -27,6 +27,7 @@ TODO:
 7. Redux / Redux Toolkit
 8. Socket.io
 9. Drive API Integration
+10. JWT 
 
 
 ## Will Add more project as time passes 🚀🚀🚀

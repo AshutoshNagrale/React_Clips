@@ -22,6 +22,7 @@ const Parallax = lazy(() => import("./pages/parallax/Parallax"));
 const FileDownload = lazy(() => import("./pages/fileDownload/FileDownload"));
 const PaginationMain = lazy(() => import("./pages/pagination/Main.jsx"));
 const Redux = lazy(() => import("./pages/redux/Redux.jsx"));
+const JWT = lazy(() => import("./pages/jwt/JWT.jsx"));
 
 function App() {
   const [count, setCount] = useState(0);
@@ -111,6 +112,11 @@ function App() {
       to: "",
       done: false,
     },
+    {
+      linkTopic: "JWT",
+      to: "jwtlesson",
+      done: true,
+    },
   ];
 
   const AppPage = () => {
@@ -118,7 +124,13 @@ function App() {
       <div className="appPage">
         <div>
           <h1>React Clips</h1>
-          <p>by Ashutosh Nagrale</p>
+          <div className="title-name">by Ashutosh Nagrale</div>
+          <Link
+            to={"https://github.com/AshutoshNagrale/React_Clips"}
+            target="_blank"
+          >
+            GitHub
+          </Link>
           <div className="card">
             <div className="PagesContainer">
               {linksData.map((item, index) => (
@@ -186,7 +198,7 @@ function App() {
                 <S3 />
               </Suspense>
             }
-          />{" "}
+          />
           <Route
             path="pagination"
             element={
@@ -194,7 +206,7 @@ function App() {
                 <PaginationMain />
               </Suspense>
             }
-          />{" "}
+          />
           <Route
             path="redux"
             element={
@@ -208,6 +220,14 @@ function App() {
             element={
               <Suspense fallback={<SuspenseLoader />}>
                 <NameLoader />
+              </Suspense>
+            }
+          />{" "}
+          <Route
+            path="jwtlesson"
+            element={
+              <Suspense fallback={<SuspenseLoader />}>
+                <JWT />
               </Suspense>
             }
           />

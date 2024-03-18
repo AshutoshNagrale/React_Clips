@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { update } from "./userSlice";
+import Navbar from "../navbar/Navbar";
 
 const Redux = () => {
   const [name, setName] = useState("");
@@ -12,6 +13,7 @@ const Redux = () => {
   };
   return (
     <div className="redux-page">
+      <Navbar />
       <h1>
         From store {`->`} {user.name} , {user.email}
       </h1>
