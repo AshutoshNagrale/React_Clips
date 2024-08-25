@@ -6,6 +6,10 @@
   "scripts": {
     "start": "vite",
     "jwt": "node ./src/pages/jwt/jwt.js",
+    "mysqlserver": "node ./src/pages/mysql/backend/index.js",
+    "mysqlui": "node ./src/pages/mysql/frontend/app.js",
+    "socketserver": "nodemon ./src/pages/socket/backend/server.js",
+    "socketui": "nodemon ./src/pages/socket/frontend/server.js",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -23,11 +27,13 @@
     "gsap": "^3.12.4",
     "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.1",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
