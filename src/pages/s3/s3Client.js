@@ -84,7 +84,6 @@ export const loadObjects = async (nextmarker) => {
     const params = {
       Bucket: bucketname,
       Marker: nextmarker,
-      MaxKeys: "10",
       Prefix: "",
     };
 
